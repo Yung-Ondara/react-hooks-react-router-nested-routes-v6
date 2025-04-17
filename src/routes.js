@@ -11,24 +11,26 @@ const routes = [
         element: <App />,
         errorElement: <ErrorPage />,
         children: [
-             {
-                path: "/",
-                element: <Home />
-            }, 
-            {
-                path: "/about",
-                element: <About />
-            },
-            {
-                path: "/login",
-                element: <Login />
-            },
-            {
-                path: "/profile/:id",
-                element: <UserProfile />
-            }
-        ]
-    }
+          {
+            path: "/",
+            element: <Home />,
+            children: [
+                {
+                    path: "/profile/:id",
+                    element: <UserProfile />
+                }
+            ]
+        }, 
+        {
+            path: "/about",
+            element: <About />
+        },
+        {
+            path: "/login",
+            element: <Login />
+        }
+    ]
+}
 ];
 
 export default routes;
